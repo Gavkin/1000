@@ -14,7 +14,7 @@ namespace _1000
         public int fails;
         public int barrel;
 
-        public void isFail(int Spot)
+        public void IsFail(int Spot)
         {
             if (Spot == 0) fails += 1;
             else fails = 0;

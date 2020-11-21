@@ -45,10 +45,10 @@ namespace _1000
                 switch (key)
                 {
                     case ConsoleKey.F1:
-                        printRules();
+                        PrintRules();
                         break;
                     case ConsoleKey.Enter:
-                        newGame();
+                        NewGame();
                         break;
                     case ConsoleKey.Escape:
                         return;
@@ -58,11 +58,11 @@ namespace _1000
             }
         }
 
-        private static void newGame()
+        private static void NewGame()
         {
 
             ConsoleKey key;
-            getNplayers();
+            GetNplayers();
 
             Game.CreateTable();
 
@@ -88,8 +88,6 @@ namespace _1000
                 minSpot = 0;
 
                 Console.Clear();
-
-
                 Console.WriteLine("(бросить кости/продолжить [Enter], перебросить несыгравшие кости [Num +])\n");
                 Console.WriteLine("{0}-й раунд\n", Game.Round + 1);
                 for (int i = 0; i < Game.Nplayers; i++)
@@ -175,7 +173,7 @@ namespace _1000
                 if (!Player[id].entered && Spot >= 50)
                     Player[id].entered = true;
 
-                Player[id].isFail(Spot);
+                Player[id].IsFail(Spot);
 
                 Player[id].score += Spot;
 
@@ -185,9 +183,9 @@ namespace _1000
                     Player[id].score = 0;
                 }
 
-                Game.intoTable(id, Player);
+                Game.IntoTable(id, Player);
 
-                Game.isBarrel(Player);
+                Game.IsBarrel(Player);
 
                 Game.PrintScore(id, Player);
 
@@ -204,8 +202,7 @@ namespace _1000
             Console.WriteLine("В конце концов, конец в конце");
         }
 
-
-        private static void getNplayers()
+        private static void GetNplayers()
         {
             while (true)
             {
@@ -238,7 +235,7 @@ namespace _1000
                 default: return "ОШИБКА В КОДЕ";
             }
         }
-        private static void printRules()
+        private static void PrintRules()
         {
             Console.WriteLine("\nПРАВИЛА \n\n (на самом деле можно не читать, т.к. приложение не даст играть не по правилам)\n" +
                 "\nОсновная цель игры - превысить 1000 очков\n" +

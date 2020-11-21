@@ -15,7 +15,7 @@ namespace _1000
             ScoreTable = new int[1, Nplayers];
         }
 
-        static public void intoTable(in int id, Player[] Player)
+        static public void IntoTable(in int id, Player[] Player)
         {
             ScoreTable[Round, id] = Player[id].score;
 
@@ -51,7 +51,7 @@ namespace _1000
                 }
             }
         }
-        static public void isBarrel(Player[] Player)
+        static public void IsBarrel(Player[] Player)
         {
             for (int i = 0; i < Nplayers; i++)
             {
